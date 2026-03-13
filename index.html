@@ -592,61 +592,59 @@ section { padding: 80px 0; }
 
 .service__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 8px;
+}
+@media (max-width: 768px) {
+  .service__grid { grid-template-columns: 1fr; gap: 16px; }
 }
 
 .service__card {
   background: var(--white);
   border: 1px solid var(--border);
+  border-top: 3px solid var(--blue);
   border-radius: var(--r);
-  padding: 32px 24px;
+  padding: 40px 32px;
   transition: box-shadow var(--ease), transform var(--ease);
 }
 .service__card:hover {
   box-shadow: var(--shadow);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .service__num {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 700;
   color: var(--blue);
-  opacity: .12;
+  opacity: .10;
   line-height: 1;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   letter-spacing: -.02em;
+}
+
+.service__role {
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+  opacity: .75;
 }
 
 .service__title {
   font-size: 1.0625rem;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 12px;
-  line-height: 1.5;
+  margin-bottom: 14px;
+  line-height: 1.55;
 }
 
 .service__desc {
   font-size: .875rem;
   color: var(--text-sub);
   line-height: 2.0;
-}
-
-.service__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 16px;
-}
-
-.service__tag {
-  font-size: .68rem;
-  font-weight: 700;
-  background: rgba(37,99,235,.08);
-  color: var(--blue);
-  border-radius: var(--r-pill);
-  padding: 3px 10px;
-  letter-spacing: .03em;
 }
 
 /* ========================================
@@ -703,11 +701,20 @@ section { padding: 80px 0; }
   color: var(--accent);
 }
 
+.results__title {
+  font-size: .8125rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.60);
+  letter-spacing: .04em;
+  margin-bottom: 4px;
+}
+
 .results__label {
   font-size: .68rem;
-  color: rgba(255,255,255,.42);
+  color: rgba(255,255,255,.35);
   letter-spacing: .14em;
   text-transform: uppercase;
+  margin-top: 2px;
 }
 
 .results__divider {
@@ -720,22 +727,27 @@ section { padding: 80px 0; }
   .results__divider { width: 1px; height: 72px; margin: 0 8px; }
 }
 
-.results__list {
-  display: flex;
-  flex-direction: column;
-  max-width: 480px;
-  margin: 0 auto 64px;
+/* Achievement List */
+.achievements__list {
+  list-style: none;
+  max-width: 560px;
+  margin: 0 auto 52px;
 }
-.results__list li {
-  font-size: .9375rem;
-  color: rgba(255,255,255,.62);
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(255,255,255,.08);
+
+.achievements__list li {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(251,191,36,.25);
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
+  line-height: 1.7;
 }
-.results__list li::before {
+.achievements__list li:first-child { border-top: 1px solid rgba(251,191,36,.25); }
+
+.achievements__list li::before {
   content: '';
   flex-shrink: 0;
   width: 5px;
@@ -743,53 +755,54 @@ section { padding: 80px 0; }
   background: var(--accent);
   border-radius: 50%;
 }
-.results__list li strong { color: var(--white); font-weight: 700; }
 
-.cases__heading {
-  font-size: .68rem;
-  font-weight: 500;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.32);
-  text-align: center;
-  margin-bottom: 24px;
+.achievements__list li strong {
+  color: var(--white);
+  font-weight: 700;
 }
 
-.cases__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: var(--r);
-  overflow: hidden;
+/* Genre Grid */
+.genres__section {
+  margin-top: 8px;
 }
 
-.case {
-  background: rgba(255,255,255,.04);
-  padding: 32px 20px;
-  text-align: center;
-  transition: background var(--ease);
-}
-.case:hover { background: rgba(255,255,255,.09); }
-
-.case__tag {
-  display: block;
-  font-size: .68rem;
-  color: rgba(255,255,255,.35);
-  letter-spacing: .05em;
-  margin-bottom: 12px;
-}
-.case__num {
+.genres__heading {
   font-size: .9375rem;
-  color: rgba(255,255,255,.72);
-  line-height: 1.7;
+  font-weight: 700;
+  color: rgba(255,255,255,.75);
+  letter-spacing: .06em;
+  text-align: center;
+  margin-bottom: 20px;
+  display: block;
 }
-.case__num strong { color: var(--white); font-weight: 700; }
+.genres__heading span {
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #fbbf24;
+}
 
-@media (min-width: 640px) {
-  .cases__grid { grid-template-columns: repeat(4, 1fr); }
+.genres__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
+@media (max-width: 480px) {
+  .genres__grid { gap: 8px; }
+}
+
+.genre {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 6px;
+  padding: 11px 8px;
+  text-align: center;
+  font-size: .9375rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.80);
+  letter-spacing: .02em;
+  transition: background var(--ease), color var(--ease);
+}
+.genre:hover { background: rgba(255,255,255,.09); color: rgba(255,255,255,.85); }
 
 /* ========================================
    Voices
@@ -807,22 +820,30 @@ section { padding: 80px 0; }
   border: 1px solid var(--border);
   border-left: 4px solid var(--blue);
   border-radius: var(--r);
-  padding: 24px 20px;
+  padding: 28px 24px;
   transition: box-shadow var(--ease), transform var(--ease);
 }
 @media (min-width: 768px) {
-  .voice { padding: 36px 32px; }
+  .voice { padding: 36px 40px; }
 }
 .voice:hover {
   box-shadow: var(--shadow);
   transform: translateY(-2px);
 }
 
+.voice__heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
 .voice__quote {
   font-size: .9375rem;
   color: var(--text-sub);
-  line-height: 2.1;
-  margin-bottom: 24px;
+  line-height: 2.0;
+  margin-bottom: 20px;
 }
 
 .voice__footer {
@@ -836,9 +857,59 @@ section { padding: 80px 0; }
   letter-spacing: .04em;
 }
 
-@media (min-width: 768px) {
-  .voices__grid { flex-direction: row; gap: 20px; }
-  .voice { flex: 1; }
+/* Extra voices (hidden initially) */
+.voices__extra {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height .65s ease, opacity .45s ease, margin-top .3s ease;
+}
+.voices__extra.is-open {
+  max-height: 1400px;
+  opacity: 1;
+  margin-top: 20px;
+}
+
+/* Toggle button */
+.voices__toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.voices__toggle-btn {
+  background: transparent;
+  border: 1.5px solid var(--blue);
+  color: var(--blue);
+  font-size: .9375rem;
+  font-weight: 500;
+  font-family: var(--font);
+  padding: 12px 36px;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  letter-spacing: .04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background var(--ease), color var(--ease), border-color var(--ease);
+}
+.voices__toggle-btn:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+.voices__toggle-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  transition: transform var(--ease);
+}
+.voices__toggle-btn.is-open .voices__toggle-icon {
+  transform: rotate(180deg);
+}
+.voices .section__heading {
+  font-size: clamp(1.875rem, 6.5vw, 2.75rem);
 }
 
 /* ========================================
@@ -1346,69 +1417,27 @@ section { padding: 80px 0; }
 <section class="service" id="service">
   <div class="container container--wide">
     <span class="section__eyebrow fade-in">SERVICE</span>
-    <h2 class="section__heading fade-in">顧問サービスで<br>できること</h2>
-    <p class="section__lead fade-in">事業フェーズに合わせて、必要な支援を提供します。</p>
+    <h2 class="section__heading fade-in">顧問サービスで<br>支援できること</h2>
+    <p class="section__lead fade-in">1on1で課題を深く整理しながら、<br>一人ひとりの事業に合わせて必要な支援を行います。</p>
 
     <div class="service__grid">
       <div class="service__card fade-in">
         <div class="service__num">01</div>
-        <h3 class="service__title">商品・サービス設計</h3>
-        <p class="service__desc">ペルソナの深層課題から逆算し、「売れる構造」を持った商品を一緒に設計。コンセプト・USP・価格帯・提供形式まで一気通貫で整理します。</p>
-        <div class="service__tags">
-          <span class="service__tag">商品設計</span>
-          <span class="service__tag">USP整理</span>
-          <span class="service__tag">価格設計</span>
-        </div>
+        <p class="service__role">売るための設計</p>
+        <h3 class="service__title">商品設計・販売導線</h3>
+        <p class="service__desc">商品設計から導線づくり、ローンチまで。<br>今の事業フェーズに合わせて、売上につながる流れを整えます。</p>
       </div>
       <div class="service__card fade-in delay-1">
         <div class="service__num">02</div>
-        <h3 class="service__title">ローンチ・販売戦略</h3>
-        <p class="service__desc">初回ローンチから複数回の再現まで設計。LP制作・SNS動線・メール設計・告知スケジュールを構造化し、「次も再現できる型」を作ります。</p>
-        <div class="service__tags">
-          <span class="service__tag">ローンチ設計</span>
-          <span class="service__tag">LP制作</span>
-          <span class="service__tag">SNS動線</span>
-        </div>
+        <p class="service__role">回るための仕組み化</p>
+        <h3 class="service__title">業務体制・仕組み化</h3>
+        <p class="service__desc">外注活用や役割整理を通して、<br>今の課題に合わせた"回る体制"を一緒につくります。</p>
       </div>
       <div class="service__card fade-in delay-2">
         <div class="service__num">03</div>
-        <h3 class="service__title">業務体制・外注構築</h3>
-        <p class="service__desc">自分がいなくても回る仕組みを設計。外注先の選定・指示書作成・KPI管理まで、「経営者の立場」から一緒に整えます。</p>
-        <div class="service__tags">
-          <span class="service__tag">外注管理</span>
-          <span class="service__tag">体制構築</span>
-          <span class="service__tag">KPI設計</span>
-        </div>
-      </div>
-      <div class="service__card fade-in">
-        <div class="service__num">04</div>
-        <h3 class="service__title">事業全体の構造整理</h3>
-        <p class="service__desc">今の事業の「ズレ・ムダ・欠落」を俯瞰して発見し、最適な構造に組み直します。「何が問題かわからない」状態から抜け出すための対話型支援。</p>
-        <div class="service__tags">
-          <span class="service__tag">課題抽出</span>
-          <span class="service__tag">構造整理</span>
-          <span class="service__tag">最適化</span>
-        </div>
-      </div>
-      <div class="service__card fade-in delay-1">
-        <div class="service__num">05</div>
-        <h3 class="service__title">思考OS・判断軸の整備</h3>
-        <p class="service__desc">なぜ同じ失敗を繰り返すのか。その根本にある「思考の前提（OS）」を整え、自分で考えて動ける状態を作ります。依存させない伴走が特徴です。</p>
-        <div class="service__tags">
-          <span class="service__tag">思考設計</span>
-          <span class="service__tag">判断軸整備</span>
-          <span class="service__tag">自立支援</span>
-        </div>
-      </div>
-      <div class="service__card fade-in delay-2">
-        <div class="service__num">06</div>
-        <h3 class="service__title">中長期の仕組み設計</h3>
-        <p class="service__desc">単発の成功で終わらせない。3〜12ヶ月のロードマップを引き、フェーズごとの目標・施策・体制を設計。「次の一手が見える」状態を作ります。</p>
-        <div class="service__tags">
-          <span class="service__tag">ロードマップ</span>
-          <span class="service__tag">仕組み化</span>
-          <span class="service__tag">PDCA</span>
-        </div>
+        <p class="service__role">考えて進めるための思考整理</p>
+        <h3 class="service__title">思考整理・判断軸の言語化</h3>
+        <p class="service__desc">頭の中にある考えを整理しながら、<br>自分に合った判断軸と次の一手を明確にします。</p>
       </div>
     </div>
   </div>
@@ -1417,48 +1446,49 @@ section { padding: 80px 0; }
 <!-- ========== RESULTS ========== -->
 <section class="results" id="results">
   <div class="container">
-    <span class="section__eyebrow fade-in">RESULTS</span>
-    <h2 class="section__heading fade-in">数字で見る、実績</h2>
+    <h2 class="section__heading fade-in">これまでの支援実績</h2>
 
     <!-- 主要数字 -->
     <div class="results__hero fade-in">
       <div class="results__stat">
+        <div class="results__title">累計支援社数</div>
         <div class="results__num">40<small>社以上</small></div>
         <div class="results__label">CUMULATIVE CLIENTS</div>
       </div>
       <div class="results__divider" aria-hidden="true"></div>
       <div class="results__stat">
+        <div class="results__title">プロデュース総額</div>
         <div class="results__num">3<small>億円超</small></div>
         <div class="results__label">TOTAL PRODUCE VALUE</div>
       </div>
     </div>
 
     <!-- 実績リスト -->
-    <ul class="results__list fade-in">
-      <li><strong>1ローンチで 250万円</strong>達成（コーチング事業）</li>
-      <li><strong>半年で 1,000万円</strong>達成（情報発信事業）</li>
-      <li><strong>年商 200万円 → 1,500万円</strong>（1年間の伴走支援）</li>
-      <li><strong>半年で売上 +300万円</strong>UP（キャリア支援事業）</li>
+    <ul class="achievements__list fade-in">
+      <li>1ローンチで <strong>2,000万円超</strong> を達成</li>
+      <li>年商 <strong>200万円 → 1,500万円</strong> へ</li>
+      <li>1ローンチで <strong>250万円</strong> を達成</li>
+      <li>5ヶ月で売上 <strong>+300万円</strong> 増加</li>
+      <li>サブスク入会者 <strong>6倍</strong> ・売上 <strong>800万円超</strong></li>
+      <li><strong>2年</strong> でスクール事業 <strong>8,000万円超</strong></li>
     </ul>
 
-    <!-- クライアント事例グリッド -->
-    <p class="cases__heading">— CASE STUDIES —</p>
-    <div class="cases__grid">
-      <div class="case fade-in">
-        <span class="case__tag">アフィリエイトスクール</span>
-        <p class="case__num">2年で達成<br><strong>8,000万円</strong></p>
-      </div>
-      <div class="case fade-in delay-1">
-        <span class="case__tag">ヨガ・サブスクサービス</span>
-        <p class="case__num">入会者・年商<br><strong>800万円超</strong></p>
-      </div>
-      <div class="case fade-in delay-2">
-        <span class="case__tag">マネースクール</span>
-        <p class="case__num">1ローンチ<br><strong>2,000万円超</strong></p>
-      </div>
-      <div class="case fade-in delay-3">
-        <span class="case__tag">キャリアアップサポート</span>
-        <p class="case__num">売上UP<br><strong>+300万円</strong></p>
+    <!-- 対応ジャンル -->
+    <div class="genres__section fade-in">
+      <p class="genres__heading"><span>対応ジャンル一覧</span></p>
+      <div class="genres__grid">
+        <div class="genre">美容</div>
+        <div class="genre">フィットネス</div>
+        <div class="genre">マネースクール</div>
+        <div class="genre">キャリアコーチング</div>
+        <div class="genre">デザイン</div>
+        <div class="genre">ビジネススクール</div>
+        <div class="genre">英会話教室</div>
+        <div class="genre">アスリート育成</div>
+        <div class="genre">トレーナー育成</div>
+        <div class="genre">地域メディア</div>
+        <div class="genre">動画編集事業</div>
+        <div class="genre">住宅</div>
       </div>
     </div>
   </div>
@@ -1467,34 +1497,59 @@ section { padding: 80px 0; }
 <!-- ========== VOICES ========== -->
 <section class="voices" id="voices">
   <div class="container">
-    <span class="section__eyebrow fade-in">VOICE</span>
-    <h2 class="section__heading fade-in">実際の声をご紹介</h2>
+    <h2 class="section__heading fade-in">お客様の声</h2>
 
+    <!-- メイン3件 -->
     <div class="voices__grid">
       <article class="voice fade-in">
-        <p class="voice__quote">
-          事業の全体像が見えていない状態から、毎月やることが明確になりました。商品設計と導線を一から組み直してもらい、2年で累計8,000万円のプロデュース実績を達成できました。
-        </p>
-        <footer class="voice__footer">
-          <p class="voice__attr">アフィリエイトスクール運営 / 30代</p>
-        </footer>
-      </article>
-      <article class="voice fade-in delay-1">
-        <p class="voice__quote">
-          入会者数が伸び悩んでいた原因が、価格設定と集客導線にあると気づかせてもらいました。整理してから半年で入会者が6倍になり、年商も800万円を超えました。
-        </p>
+        <p class="voice__heading">価格と導線を見直し、入会者6倍・年商8倍へ</p>
+        <p class="voice__quote">入会者数が伸び悩んでいた原因が、価格設定と集客導線にあると分かりました。設計を整理してから半年で入会者が6倍になり、年商も8倍まで伸びました。売れない理由が感覚ではなく、構造として見えるようになったのが大きかったです。</p>
         <footer class="voice__footer">
           <p class="voice__attr">ヨガ・サブスクサービス運営 / 40代</p>
         </footer>
       </article>
-      <article class="voice fade-in delay-2">
-        <p class="voice__quote">
-          戦略は立てられても行動に移せない、という悩みがありました。KGIを設定して毎月確認する仕組みを作ってもらい、半年で売上が大幅に改善されました。
-        </p>
+      <article class="voice fade-in delay-1">
+        <p class="voice__heading">自分の色を活かした差別化設計ができた</p>
+        <p class="voice__quote">よくあるテンプレートに当てはめるのではなく、自分の強みをどこに置き、どう差別化するかを一緒に整理してもらえました。感覚でやっていたことも言語化できたことで、自分らしさを残したまま再現性のある形に落とし込めました。「自分だから選ばれる理由」が明確になった感覚があります。</p>
         <footer class="voice__footer">
-          <p class="voice__attr">キャリアコーチング事業 / 30代</p>
+          <p class="voice__attr">ビジネスコンサルタント / 30代</p>
         </footer>
       </article>
+      <article class="voice fade-in delay-2">
+        <p class="voice__heading">事業全体の設計が整い、安心してローンチできた</p>
+        <p class="voice__quote">商品設計だけでなく、契約書・決済手段・販売後の事務導線まで、事業として必要なものをまとめて整えてもらえました。「何が足りないか」が明確になったことで、一人では不安だったローンチ準備も迷わず進められるようになりました。売る前の不安が減り、土台のある状態でスタートできたのが大きかったです。</p>
+        <footer class="voice__footer">
+          <p class="voice__attr">オンラインサービス事業 / 30代</p>
+        </footer>
+      </article>
+    </div>
+
+    <!-- サブ2件（展開時に表示） -->
+    <div class="voices__extra" id="voices-extra" aria-hidden="true">
+      <article class="voice">
+        <p class="voice__heading">当たり前だと思っていた強みが、商品になった</p>
+        <p class="voice__quote">自分では普通だと思っていた知識や経験を、対話を通して強みとして言語化してもらえました。オンラインサロン・講座・コンサルなどの違いも整理できたことで、自分に合ったビジネスモデルが明確になりました。止まっていた一歩を踏み出せたのは、この整理があったからだと思います。</p>
+        <footer class="voice__footer">
+          <p class="voice__attr">コーチング事業 / 30代</p>
+        </footer>
+      </article>
+      <article class="voice">
+        <p class="voice__heading">「完成してから売る」を手放し、収益が大きく伸びた</p>
+        <p class="voice__quote">「作り切ってから売る」という思い込みを外してもらい、ニーズを確認してから作る設計に変えました。準備期間ゼロでもマネタイズできるようになり、商品の構造を見直したことでアップセル率も改善しました。順番と構造を変えるだけで、これほど売れ方が変わるとは思っていませんでした。</p>
+        <footer class="voice__footer">
+          <p class="voice__attr">スクール事業 / 40代</p>
+        </footer>
+      </article>
+    </div>
+
+    <!-- 展開ボタン -->
+    <div class="voices__toggle">
+      <button class="voices__toggle-btn" id="voices-toggle-btn" aria-expanded="false">
+        <span class="voices__toggle-text">他の声も見る</span>
+        <svg class="voices__toggle-icon" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 4.5L7 9.5L12 4.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
     </div>
   </div>
 </section>
@@ -1694,6 +1749,19 @@ const observer = new IntersectionObserver(
   { threshold: 0.12 }
 );
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Voices expand
+const voicesToggleBtn = document.getElementById('voices-toggle-btn');
+const voicesExtra = document.getElementById('voices-extra');
+if (voicesToggleBtn && voicesExtra) {
+  voicesToggleBtn.addEventListener('click', () => {
+    const isOpen = voicesExtra.classList.toggle('is-open');
+    voicesExtra.setAttribute('aria-hidden', String(!isOpen));
+    voicesToggleBtn.classList.toggle('is-open', isOpen);
+    voicesToggleBtn.setAttribute('aria-expanded', String(isOpen));
+    voicesToggleBtn.querySelector('.voices__toggle-text').textContent = isOpen ? '閉じる' : '他の声も見る';
+  });
+}
 </script>
 </body>
 </html>
