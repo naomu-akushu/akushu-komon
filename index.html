@@ -1239,9 +1239,61 @@ section { padding: 80px 0; }
   opacity: 1;
   transform: translateY(0);
 }
-.fade-in.delay-1 { transition-delay: .1s; }
-.fade-in.delay-2 { transition-delay: .2s; }
-.fade-in.delay-3 { transition-delay: .3s; }
+.fade-in.delay-1  { transition-delay: .12s; }
+.fade-in.delay-2  { transition-delay: .24s; }
+.fade-in.delay-3  { transition-delay: .36s; }
+.fade-in.delay-4  { transition-delay: .48s; }
+.fade-in.delay-5  { transition-delay: .60s; }
+.fade-in.delay-6  { transition-delay: .72s; }
+.fade-in.delay-7  { transition-delay: .84s; }
+.fade-in.delay-8  { transition-delay: .96s; }
+.fade-in.delay-9  { transition-delay: 1.08s; }
+.fade-in.delay-10 { transition-delay: 1.20s; }
+.fade-in.delay-11 { transition-delay: 1.32s; }
+.fade-in.delay-12 { transition-delay: 1.44s; }
+
+/* ========================================
+   Hero ページロードアニメーション
+======================================== */
+@keyframes heroReveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes badgePop {
+  0%   { opacity: 0; transform: scale(.85); }
+  65%  { transform: scale(1.04); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.hero__banner {
+  animation: heroReveal .9s cubic-bezier(0.22, 1, 0.36, 1) .15s both;
+}
+.hero__badge {
+  animation: badgePop .7s cubic-bezier(0.34, 1.56, 0.64, 1) .55s both;
+}
+.hero .btn--hero {
+  animation: heroReveal .75s cubic-bezier(0.22, 1, 0.36, 1) .8s both;
+}
+
+/* ========================================
+   CTA グロー点滅（CONTACTセクション）
+======================================== */
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: var(--shadow-blue); }
+  50%       { box-shadow: 0 8px 52px rgba(37,99,235,.52), 0 0 0 6px rgba(37,99,235,.09); }
+}
+.contact__cta-wrap .btn--hero {
+  animation: ctaPulse 3.2s ease-in-out 1.2s infinite;
+}
+
+/* ========================================
+   ジャンルタグ stagger
+======================================== */
+.genre {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+.genres__section.visible .genre { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body id="top">
@@ -1392,14 +1444,14 @@ section { padding: 80px 0; }
           <p class="value__desc">アドバイスだけで終わらず、商品設計・導線づくり・ローンチ・運用体制まで一貫して対応。「何をするか」だけでなく、「どう形にするか」まで一緒に進めます。</p>
         </div>
       </li>
-      <li class="value__item fade-in">
+      <li class="value__item fade-in delay-2">
         <span class="value__num" aria-hidden="true">02</span>
         <div>
           <h3 class="value__title">単発で終わらない売上の仕組みをつくる</h3>
           <p class="value__desc">一回のローンチで終わらせず、次につながる商品設計・導線・数値管理まで設計。継続して売上が積み上がる状態を目指して、事業全体を整えます。</p>
         </div>
       </li>
-      <li class="value__item fade-in">
+      <li class="value__item fade-in delay-4">
         <span class="value__num" aria-hidden="true">03</span>
         <div>
           <h3 class="value__title">ジャンルに合わせて、最適な形で支援する</h3>
@@ -1449,13 +1501,13 @@ section { padding: 80px 0; }
     <div class="results__hero fade-in">
       <div class="results__stat">
         <div class="results__title">累計支援社数</div>
-        <div class="results__num">40<small>社以上</small></div>
+        <div class="results__num" data-count="40" data-suffix="社以上">0<small>社以上</small></div>
         <div class="results__label">CUMULATIVE CLIENTS</div>
       </div>
       <div class="results__divider" aria-hidden="true"></div>
       <div class="results__stat">
         <div class="results__title">プロデュース総額</div>
-        <div class="results__num">3<small>億円超</small></div>
+        <div class="results__num" data-count="3" data-suffix="億円超">0<small>億円超</small></div>
         <div class="results__label">TOTAL PRODUCE VALUE</div>
       </div>
     </div>
@@ -1474,18 +1526,18 @@ section { padding: 80px 0; }
     <div class="genres__section fade-in">
       <p class="genres__heading"><span>対応ジャンル一覧</span></p>
       <div class="genres__grid">
-        <div class="genre">美容</div>
-        <div class="genre">フィットネス</div>
-        <div class="genre">マネースクール</div>
-        <div class="genre">キャリアコーチング</div>
-        <div class="genre">デザインスクール</div>
-        <div class="genre">ビジネススクール</div>
-        <div class="genre">英会話教室</div>
-        <div class="genre">レシピ販売</div>
-        <div class="genre">トレーナー育成</div>
-        <div class="genre">地域メディア</div>
-        <div class="genre">動画編集事業</div>
-        <div class="genre">外構エクステリア</div>
+        <div class="genre" style="transition-delay:.05s">美容</div>
+        <div class="genre" style="transition-delay:.10s">フィットネス</div>
+        <div class="genre" style="transition-delay:.15s">マネースクール</div>
+        <div class="genre" style="transition-delay:.20s">キャリアコーチング</div>
+        <div class="genre" style="transition-delay:.25s">デザインスクール</div>
+        <div class="genre" style="transition-delay:.30s">ビジネススクール</div>
+        <div class="genre" style="transition-delay:.35s">英会話教室</div>
+        <div class="genre" style="transition-delay:.40s">レシピ販売</div>
+        <div class="genre" style="transition-delay:.45s">トレーナー育成</div>
+        <div class="genre" style="transition-delay:.50s">地域メディア</div>
+        <div class="genre" style="transition-delay:.55s">動画編集事業</div>
+        <div class="genre" style="transition-delay:.60s">外構エクステリア</div>
       </div>
     </div>
   </div>
@@ -1660,22 +1712,6 @@ section { padding: 80px 0; }
 
 <!-- ========== FOOTER ========== -->
 <footer class="footer">
-  <div class="footer__inner">
-    <div>
-      <span class="footer__logo">akushu</span>
-      <p class="footer__tag">事業の課題を整理し、仕組みとして「回る」状態へ</p>
-    </div>
-    <nav class="footer__nav" aria-label="フッターナビ">
-      <ul>
-        <li><a href="#value">サービス</a></li>
-        <li><a href="#results">実績</a></li>
-        <li><a href="#profile">プロフィール</a></li>
-        <li><a href="#faq">よくある質問</a></li>
-        <li><a href="https://timerex.net/s/i.akushuofficial_b88a/69c9001f"
-               target="_blank" rel="noopener">無料相談</a></li>
-      </ul>
-    </nav>
-  </div>
   <div class="footer__bottom">
     © 2025 合同会社akushu. All Rights Reserved.
   </div>
@@ -1733,6 +1769,30 @@ const observer = new IntersectionObserver(
   { threshold: 0.12 }
 );
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Count-up animation for stats
+const countUpObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = parseInt(el.dataset.count, 10);
+    const small = el.querySelector('small');
+    const smallHTML = small ? small.outerHTML : '';
+    let startTime = null;
+    const duration = 1400;
+    const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+    const tick = ts => {
+      if (!startTime) startTime = ts;
+      const progress = Math.min((ts - startTime) / duration, 1);
+      const current = Math.round(easeOutCubic(progress) * target);
+      el.childNodes[0].textContent = current;
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    countUpObserver.unobserve(el);
+  });
+}, { threshold: 0.6 });
+document.querySelectorAll('[data-count]').forEach(el => countUpObserver.observe(el));
 
 // Voices expand
 const voicesToggleBtn = document.getElementById('voices-toggle-btn');
