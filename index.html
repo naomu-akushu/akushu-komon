@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="フォロワーがいるのに稼げない。ローンチが再現できない。その悩み、構造の問題かもしれません。合同会社akushu・横山尚武の事業設計顧問サービス。">
+  <meta property="og:title" content="事業設計顧問サービス｜合同会社akushu">
+  <meta property="og:description" content="商品設計から販売戦略まであなたのビジネスをワンストップでサポート。顧問実績40社以上、プロデュース総額3億円超。">
+  <meta property="og:type" content="website">
+  <title>事業設計顧問サービス｜合同会社akushu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+/* ========================================
+   CSS Variables
+======================================== */
+:root {
+  --navy:       #1a2f5e;
+  --navy-deep:  #0a1628;
+  --blue:       #2563eb;
+  --blue-dark:  #1d4fd8;
+  --blue-light: #3b82f6;
+  --accent:     #93c5fd;
+  --white:      #ffffff;
+  --bg:         #f4f6fa;
+  --bg-alt:     #eef0f5;
+
+  --text:       #1a1a1a;
+  --text-sub:   #4a4a4a;
+  --text-muted: #909090;
+  --border:     #e2e4e8;
+
+  --font: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+          'Yu Gothic', sans-serif;
+
+  --w-default: 860px;
+  --w-narrow:  640px;
+  --w-wide:   1080px;
+
+  --r:      8px;
+  --r-pill: 100px;
+
+  --shadow:      0 4px 24px rgba(0,0,0,.10);
+  --shadow-lg:   0 12px 48px rgba(0,0,0,.20);
+  --shadow-blue: 0 8px 32px rgba(37,99,235,.28);
+
+  --ease: 0.25s ease;
+  --hh:   68px;
+}
+
+/* ========================================
+   Reset
+======================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; scroll-padding-top: var(--hh); }
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a   { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+
+/* ========================================
+   Layout
+======================================== */
+.container {
+  width: 100%;
+  max-width: var(--w-default);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media (min-width: 768px) {
+  .container { padding: 0 32px; }
+}
+.container--narrow { max-width: var(--w-narrow); }
+.container--wide   { max-width: var(--w-wide); }
+
+section { padding: 80px 0; }
+@media (min-width: 768px) { section { padding: 120px 0; } }
+@media (min-width: 1024px) { section { padding: 140px 0; } }
+
+/* ========================================
+   共通 Section ラベル & 見出し
+======================================== */
+.section__eyebrow {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 14px;
+}
+
+.section__heading {
+  font-size: clamp(1.5rem, 5.5vw, 2.25rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.4;
+  margin-bottom: 20px;
+  letter-spacing: .02em;
+}
+
+.section__heading::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--blue);
+  border-radius: 2px;
+  margin-top: 16px;
+  margin-bottom: 36px;
+}
+@media (min-width: 768px) {
+  .section__heading::after { margin-top: 20px; margin-bottom: 52px; }
+}
+
+.section__lead {
+  font-size: 1rem;
+  color: var(--text-sub);
+  line-height: 2.0;
+  margin-top: -24px;
+  margin-bottom: 52px;
+}
+
+/* ========================================
+   Buttons
+======================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 38px;
+  border: 2px solid transparent;
+  border-radius: var(--r-pill);
+  font-family: var(--font);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.5;
+  cursor: pointer;
+  transition:
+    background var(--ease),
+    color var(--ease),
+    border-color var(--ease),
+    box-shadow var(--ease),
+    transform var(--ease);
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+.btn--primary:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  box-shadow: var(--shadow-blue);
+  transform: translateY(-1px);
+}
+
+.btn--sm { padding: 9px 20px; font-size: 0.8125rem; }
+
+.btn--hero {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+  padding: 17px 32px;
+  font-size: 1rem;
+  box-shadow: 0 8px 32px rgba(37,99,235,.45);
+  width: 100%;
+  max-width: 340px;
+}
+@media (min-width: 640px) {
+  .btn--hero { padding: 18px 52px; font-size: 1.0625rem; width: auto; max-width: none; }
+}
+.btn--hero:hover {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 44px rgba(37,99,235,.55);
+}
+
+/* ========================================
+   Header
+======================================== */
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  height: var(--hh);
+  z-index: 100;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: box-shadow var(--ease);
+}
+.header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.10); }
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  max-width: var(--w-wide);
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 0;
+}
+
+.header__logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .14em;
+  margin-right: auto;
+}
+
+.header__nav { display: none; }
+.header__cta { display: none; }
+
+.header__nav-list {
+  display: flex;
+  gap: 32px;
+  margin-right: 32px;
+}
+.header__nav-list a {
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--text-sub);
+  transition: color var(--ease);
+}
+.header__nav-list a:hover { color: var(--navy); }
+
+.header__hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.header__hamburger span {
+  display: block;
+  height: 1.5px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: transform var(--ease), opacity var(--ease);
+}
+.header__hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.header__hamburger.open span:nth-child(2) { opacity: 0; }
+.header__hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+@media (min-width: 900px) {
+  .header__nav { display: flex; }
+  .header__cta { display: inline-flex; }
+  .header__hamburger { display: none; }
+}
+
+/* ========================================
+   Mobile Nav
+======================================== */
+.mobile-nav {
+  position: fixed;
+  inset: var(--hh) 0 auto;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  z-index: 99;
+  padding: 20px 24px 32px;
+  transform: translateY(-110%);
+  transition: transform .28s ease;
+}
+.mobile-nav.open { transform: translateY(0); }
+
+.mobile-nav__list { display: flex; flex-direction: column; }
+.mobile-nav__link {
+  display: block;
+  padding: 14px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+.mobile-nav__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* ========================================
+   Hero — ダーク
+======================================== */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(165deg, #020c20 0%, #071428 35%, #0e1f40 65%, #1a2f5e 100%);
+  overflow: hidden;
+  padding-top: var(--hh);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 55%, rgba(37,99,235,.2) 0%, rgba(37,99,235,.06) 45%, transparent 70%);
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 12% 78%, rgba(37,99,235,.14) 0%, transparent 38%),
+    radial-gradient(circle at 88% 18%, rgba(147,197,253,.1) 0%, transparent 32%);
+  z-index: 0;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 40px 20px 64px;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .hero__inner { padding: 64px 40px 80px; gap: 40px; }
+}
+
+/* ヒーローバナー画像 */
+.hero__banner {
+  width: 100%;
+  max-width: 760px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,.55);
+  line-height: 0;
+}
+.hero__banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.hero__banner-placeholder {
+  width: 100%;
+  aspect-ratio: 16/7;
+  background: rgba(255,255,255,.06);
+  border: 1px dashed rgba(255,255,255,.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.4);
+  font-size: .875rem;
+  border-radius: 12px;
+}
+
+/* 実績バッジ */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: var(--r-pill);
+  padding: 14px 36px;
+  font-size: 1.125rem;
+  color: rgba(255,255,255,.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  letter-spacing: .04em;
+}
+.hero__badge-item { white-space: nowrap; }
+.hero__badge strong {
+  color: var(--accent);
+  font-weight: 700;
+  margin: 0 4px;
+}
+.hero__badge-sep {
+  display: none;
+  width: 1px;
+  height: 14px;
+  background: rgba(255,255,255,.2);
+  flex-shrink: 0;
+}
+@media (min-width: 600px) {
+  .hero__badge { flex-wrap: nowrap; gap: 0; }
+  .hero__badge-sep { display: inline-block; margin: 0 14px; }
+}
+
+.hero__note {
+  font-size: .8125rem;
+  color: rgba(255,255,255,.38);
+  letter-spacing: .02em;
+}
+
+/* スクロール矢印 */
+.hero__scroll {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,.25);
+  animation: bounce 3s ease-in-out infinite;
+  transition: color var(--ease);
+  z-index: 1;
+}
+.hero__scroll:hover { color: rgba(255,255,255,.6); }
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ========================================
+   Concept
+======================================== */
+.concept {
+  background: var(--white);
+  text-align: center;
+}
+
+.concept__text {
+  font-size: clamp(1.75rem, 5vw, 2.375rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.85;
+  margin-bottom: 28px;
+  letter-spacing: .03em;
+}
+
+.concept__desc {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  line-height: 2.1;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   Pain Point (Empathy)
+======================================== */
+.empathy { background: var(--bg); }
+
+.empathy__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.empathy__card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 24px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: box-shadow var(--ease), transform var(--ease);
+}
+
+.empathy__num {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 2rem;
+  margin-top: 2px;
+  letter-spacing: .02em;
+}
+.empathy__card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.empathy__icon {
+  font-size: 1.375rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.empathy__text {
+  font-size: .9375rem;
+  line-height: 1.7;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.empathy__conclusion {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+  border-radius: var(--r);
+  padding: 48px 32px;
+  text-align: center;
+}
+.empathy__conclusion__desc {
+  font-size: .9375rem;
+  color: rgba(255,255,255,.70);
+  line-height: 2;
+  margin-bottom: 4px;
+}
+.empathy__conclusion__divider {
+  width: 32px;
+  height: 1px;
+  background: rgba(255,255,255,.2);
+  margin: 28px auto;
+}
+.empathy__conclusion__strong {
+  display: block;
+  font-size: clamp(1.125rem, 3.2vw, 1.4rem);
+  font-weight: 700;
+  color: #fbbf24;
+  line-height: 1.85;
+  text-align: center;
+}
+.empathy__conclusion__strong em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+/* ========================================
+   Value (3つの強み)
+======================================== */
+.value { background: var(--white); }
+
+.value__list {
+  border-top: 1px solid var(--border);
+}
+
+.value__item {
+  display: flex;
+  gap: 20px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+@media (min-width: 768px) {
+  .value__item { gap: 32px; padding: 52px 0; }
+}
+
+.value__num {
+  flex-shrink: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1;
+  padding-top: 4px;
+  width: 52px;
+  opacity: .15;
+  letter-spacing: -.02em;
+}
+
+.value__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.value__desc {
+  font-size: .9375rem;
+  color: var(--text-sub);
+  line-height: 2.1;
+}
+
+/* ========================================
+   Service (できること)
+======================================== */
+.service { background: var(--bg); }
+
+.service__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.service__card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 32px 24px;
+  transition: box-shadow var(--ease), transform var(--ease);
+}
+.service__card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.service__num {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--blue);
+  opacity: .12;
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -.02em;
+}
+
+.service__title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.service__desc {
+  font-size: .875rem;
+  color: var(--text-sub);
+  line-height: 2.0;
+}
+
+.service__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.service__tag {
+  font-size: .68rem;
+  font-weight: 700;
+  background: rgba(37,99,235,.08);
+  color: var(--blue);
+  border-radius: var(--r-pill);
+  padding: 3px 10px;
+  letter-spacing: .03em;
+}
+
+/* ========================================
+   Results — ダーク背景
+======================================== */
+.results {
+  background: linear-gradient(160deg, #091525 0%, #0f1f38 50%, #1a2f5e 100%);
+}
+
+.results .section__eyebrow { color: var(--accent); }
+.results .section__heading { color: var(--white); }
+.results .section__heading::after { background: var(--accent); }
+
+.results__hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+  padding: 32px 16px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r);
+  background: rgba(255,255,255,.05);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+@media (min-width: 640px) {
+  .results__hero { padding: 52px 40px; margin-bottom: 64px; }
+}
+
+.results__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+}
+@media (min-width: 640px) {
+  .results__stat { padding: 12px 48px; }
+}
+
+.results__num {
+  font-size: clamp(3rem, 9vw, 4.5rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.results__num small {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  margin-left: 3px;
+  color: var(--accent);
+}
+
+.results__label {
+  font-size: .68rem;
+  color: rgba(255,255,255,.42);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.results__divider {
+  width: 80px;
+  height: 1px;
+  background: rgba(255,255,255,.15);
+  margin: 8px auto;
+}
+@media (min-width: 640px) {
+  .results__divider { width: 1px; height: 72px; margin: 0 8px; }
+}
+
+.results__list {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin: 0 auto 64px;
+}
+.results__list li {
+  font-size: .9375rem;
+  color: rgba(255,255,255,.62);
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.results__list li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.results__list li strong { color: var(--white); font-weight: 700; }
+
+.cases__heading {
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.32);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.cases__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+
+.case {
+  background: rgba(255,255,255,.04);
+  padding: 32px 20px;
+  text-align: center;
+  transition: background var(--ease);
+}
+.case:hover { background: rgba(255,255,255,.09); }
+
+.case__tag {
+  display: block;
+  font-size: .68rem;
+  color: rgba(255,255,255,.35);
+  letter-spacing: .05em;
+  margin-bottom: 12px;
+}
+.case__num {
+  font-size: .9375rem;
+  color: rgba(255,255,255,.72);
+  line-height: 1.7;
+}
+.case__num strong { color: var(--white); font-weight: 700; }
+
+@media (min-width: 640px) {
+  .cases__grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ========================================
+   Voices
+======================================== */
+.voices { background: var(--bg); }
+
+.voices__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.voice {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--blue);
+  border-radius: var(--r);
+  padding: 24px 20px;
+  transition: box-shadow var(--ease), transform var(--ease);
+}
+@media (min-width: 768px) {
+  .voice { padding: 36px 32px; }
+}
+.voice:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.voice__quote {
+  font-size: .9375rem;
+  color: var(--text-sub);
+  line-height: 2.1;
+  margin-bottom: 24px;
+}
+
+.voice__footer {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.voice__attr {
+  font-size: .75rem;
+  color: var(--text-muted);
+  letter-spacing: .04em;
+}
+
+@media (min-width: 768px) {
+  .voices__grid { flex-direction: row; gap: 20px; }
+  .voice { flex: 1; }
+}
+
+/* ========================================
+   Profile
+======================================== */
+.profile { background: var(--white); }
+
+.profile__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.profile__image img {
+  width: 100%;
+  max-width: 260px;
+  height: 300px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--r);
+  margin: 0 auto;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+.profile__image-placeholder {
+  width: 100%;
+  max-width: 260px;
+  height: 300px;
+  background: var(--bg);
+  border: 2px dashed var(--border);
+  border-radius: var(--r);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: .875rem;
+  margin: 0 auto;
+}
+
+.profile__en {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.profile__name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+  letter-spacing: .02em;
+}
+
+.profile__title {
+  font-size: .875rem;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.profile__bio {
+  font-size: .9375rem;
+  color: var(--text-sub);
+  line-height: 2.1;
+  margin-bottom: 18px;
+}
+
+.profile__career {
+  margin: 32px 0 36px;
+  border-top: 1px solid var(--border);
+}
+
+.profile__career li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .9rem;
+  color: var(--text-sub);
+}
+
+.profile__age {
+  flex-shrink: 0;
+  font-size: .68rem;
+  font-weight: 700;
+  color: var(--blue);
+  background: rgba(37,99,235,.08);
+  border-radius: var(--r-pill);
+  padding: 3px 12px;
+}
+
+.profile__link {
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity var(--ease);
+}
+.profile__link:hover { opacity: .65; }
+
+@media (min-width: 768px) {
+  .profile__inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 64px;
+  }
+  .profile__image { flex-shrink: 0; width: 240px; }
+  .profile__image img,
+  .profile__image-placeholder { max-width: 240px; margin: 0; }
+}
+
+/* ========================================
+   FAQ
+======================================== */
+.faq { background: var(--bg); }
+
+.faq__list { border-top: 1px solid var(--border); }
+
+.faq__item { border-bottom: 1px solid var(--border); }
+
+.faq__q {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 24px 48px 24px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: color var(--ease);
+}
+.faq__q:hover { color: var(--blue); }
+
+.faq__q > span {
+  flex-shrink: 0;
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--blue);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.faq__q::after {
+  content: '';
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid var(--text-muted);
+  border-bottom: 1.5px solid var(--text-muted);
+  transform: translateY(-60%) rotate(45deg);
+  transition: transform var(--ease);
+}
+.faq__item.open .faq__q::after {
+  transform: translateY(-30%) rotate(-135deg);
+}
+
+.faq__a {
+  display: none;
+  padding: 0 0 28px 38px;
+  font-size: .9375rem;
+  color: var(--text-sub);
+  line-height: 2;
+}
+.faq__item.open .faq__a { display: block; }
+
+/* ========================================
+   Contact — ダーク背景
+======================================== */
+.contact {
+  background: linear-gradient(160deg, #040e22 0%, #0a1628 40%, #0f1e3d 100%);
+  text-align: center;
+}
+
+.contact .section__eyebrow { color: var(--accent); }
+
+.contact__heading {
+  font-size: clamp(1.75rem, 4.5vw, 2.25rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.45;
+  margin-bottom: 16px;
+}
+.contact__heading::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin: 16px auto 32px;
+}
+@media (min-width: 768px) {
+  .contact__heading::after { margin: 20px auto 48px; }
+}
+
+.contact__sub {
+  font-size: .9375rem;
+  color: rgba(255,255,255,.52);
+  line-height: 2;
+  margin-bottom: 44px;
+  margin-top: -16px;
+}
+
+.contact__cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact__note {
+  font-size: .8125rem;
+  color: rgba(255,255,255,.3);
+  letter-spacing: .02em;
+}
+
+/* ========================================
+   Footer
+======================================== */
+.footer {
+  background: #020a18;
+  color: rgba(255,255,255,.45);
+}
+
+.footer__inner {
+  max-width: var(--w-wide);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 56px;
+  padding-bottom: 44px;
+}
+
+.footer__logo {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: .14em;
+  margin-bottom: 8px;
+}
+.footer__tag {
+  font-size: .75rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,.28);
+}
+
+.footer__nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+}
+.footer__nav a {
+  font-size: .8125rem;
+  color: rgba(255,255,255,.38);
+  transition: color var(--ease);
+}
+.footer__nav a:hover { color: var(--white); }
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 20px 24px;
+  text-align: center;
+  font-size: .72rem;
+  color: rgba(255,255,255,.22);
+  letter-spacing: .05em;
+}
+
+@media (min-width: 768px) {
+  .footer__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .footer__nav ul { flex-direction: column; gap: 8px; }
+}
+
+/* ========================================
+   Fixed CTA（モバイルのみ）
+======================================== */
+.fixed-cta {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 90;
+  padding: 12px 20px;
+  background: var(--navy-deep);
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform .35s ease;
+  box-shadow: 0 -6px 24px rgba(0,0,0,.3);
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.fixed-cta.show { transform: translateY(0); }
+.fixed-cta .btn {
+  width: 100%;
+  max-width: 420px;
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(37,99,235,.4);
+}
+.fixed-cta .btn:hover {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+}
+
+@media (min-width: 900px) { .fixed-cta { display: none; } }
+
+/* ========================================
+   Scroll Fade-in
+======================================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity .75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform .75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in.delay-1 { transition-delay: .1s; }
+.fade-in.delay-2 { transition-delay: .2s; }
+.fade-in.delay-3 { transition-delay: .3s; }
+  </style>
+</head>
+<body id="top">
+
+<!-- ========== HEADER ========== -->
+<header class="header">
+  <div class="header__inner">
+    <a class="header__logo" href="#top">akushu</a>
+    <nav class="header__nav" aria-label="グローバルナビ">
+      <ul class="header__nav-list">
+        <li><a href="#value">サービス</a></li>
+        <li><a href="#results">実績</a></li>
+        <li><a href="#profile">プロフィール</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary btn--sm header__cta"
+       href="https://timerex.net/s/i.akushuofficial_b88a/fed5b8e7"
+       target="_blank" rel="noopener">無料相談する</a>
+    <button class="header__hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobile-nav">
+  <ul class="mobile-nav__list">
+    <li><a class="mobile-nav__link" href="#value">サービス</a></li>
+    <li><a class="mobile-nav__link" href="#results">実績</a></li>
+    <li><a class="mobile-nav__link" href="#profile">プロフィール</a></li>
+    <li><a class="mobile-nav__link" href="#faq">よくある質問</a></li>
+  </ul>
+  <div class="mobile-nav__cta">
+    <a class="btn btn--hero"
+       href="https://timerex.net/s/i.akushuofficial_b88a/fed5b8e7"
+       target="_blank" rel="noopener">無料相談はこちらから</a>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+  <div class="hero__inner">
+    <!-- バナー画像 -->
+    <div class="hero__banner">
+      <img src="images/hero.jpg"
+           alt="事業設計顧問サービス｜合同会社akushu"
+           onerror="this.parentElement.innerHTML='<div class=\'hero__banner-placeholder\'>📸 images/hero.jpg を配置してください</div>'">
+    </div>
+
+    <!-- 実績バッジ -->
+    <div class="hero__badge">
+      <span class="hero__badge-item">累計支援 <strong>40社</strong>以上</span>
+      <span class="hero__badge-sep" aria-hidden="true"></span>
+      <span class="hero__badge-item">プロデュース総額 <strong>3億円</strong>超</span>
+    </div>
+
+    <a class="btn btn--hero"
+       href="https://timerex.net/s/i.akushuofficial_b88a/fed5b8e7"
+       target="_blank" rel="noopener">無料相談はこちらから →</a>
+
+  </div>
+
+  <a class="hero__scroll" href="#concept" aria-label="下へスクロール">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </a>
+</section>
+
+<!-- ========== CONCEPT ========== -->
+<section class="concept" id="concept">
+  <div class="container container--narrow">
+    <p class="concept__text fade-in">
+      売上が継続的に生まれる、<br>持続可能な事業へ
+    </p>
+    <p class="concept__desc fade-in">
+      自社商品の設計から動線作り、ローンチ、運用体制、KPI管理まで、<br>
+      売るだけで終わらない「事業として成り立つ形」へ、<br>
+      伴走してサポートいたします。
+    </p>
+  </div>
+</section>
+
+<!-- ========== PAIN POINT ========== -->
+<section class="empathy" id="empathy">
+  <div class="container">
+    <span class="section__eyebrow fade-in">PAIN POINT</span>
+    <h2 class="section__heading fade-in">こんな悩み、<br>ありませんか？</h2>
+    <p class="section__lead fade-in">多くのインフルエンサーや個人事業主が同じような悩みを抱えています。</p>
+
+    <div class="empathy__grid">
+      <div class="empathy__card fade-in">
+        <span class="empathy__num">01</span>
+        <p class="empathy__text">フォロワーは増えているのに、なぜか売上につながらない</p>
+      </div>
+      <div class="empathy__card fade-in delay-1">
+        <span class="empathy__num">02</span>
+        <p class="empathy__text">ローンチはうまくいったのに、次が再現できず毎回ゼロになる</p>
+      </div>
+      <div class="empathy__card fade-in delay-2">
+        <span class="empathy__num">03</span>
+        <p class="empathy__text">やるべきことは見えているのに、成果が安定しない</p>
+      </div>
+      <div class="empathy__card fade-in">
+        <span class="empathy__num">04</span>
+        <p class="empathy__text">商品を作っても売れない（何が問題なのかすら分かっていない）</p>
+      </div>
+      <div class="empathy__card fade-in delay-1">
+        <span class="empathy__num">05</span>
+        <p class="empathy__text">アドバイスを受けても、何から手をつければいいか分からない</p>
+      </div>
+      <div class="empathy__card fade-in delay-2">
+        <span class="empathy__num">06</span>
+        <p class="empathy__text">収益が出ていても、自分が動き続けないと止まってしまう</p>
+      </div>
+    </div>
+
+    <div class="empathy__conclusion fade-in">
+      <p class="empathy__conclusion__desc">売上の悩みは、一つのやり方だけで解決するものではありません。</p>
+      <p class="empathy__conclusion__desc">商品・導線・体制が噛み合っていないと、成果は安定しないからです。</p>
+      <div class="empathy__conclusion__divider"></div>
+      <strong class="empathy__conclusion__strong">
+        部分ではなく、事業全体を整える。<br>
+        それが、<em>売上を継続させる</em>近道です。
+      </strong>
+    </div>
+  </div>
+</section>
+
+<!-- ========== VALUE (3つの強み) ========== -->
+<section class="value" id="value">
+  <div class="container">
+    <span class="section__eyebrow fade-in">WHY AKUSHU</span>
+    <h2 class="section__heading fade-in">なぜ僕の顧問サービスが<br>選ばれるのか</h2>
+
+    <ul class="value__list">
+      <li class="value__item fade-in">
+        <span class="value__num" aria-hidden="true">01</span>
+        <div>
+          <h3 class="value__title">商品設計から実装まで、ワンストップで支援する</h3>
+          <p class="value__desc">アドバイスだけで終わらず、商品設計・導線づくり・ローンチ・運用体制まで一貫して対応。「何をするか」だけでなく、「どう形にするか」まで一緒に進めます。</p>
+        </div>
+      </li>
+      <li class="value__item fade-in">
+        <span class="value__num" aria-hidden="true">02</span>
+        <div>
+          <h3 class="value__title">単発で終わらない売上の仕組みをつくる</h3>
+          <p class="value__desc">一回のローンチで終わらせず、次につながる商品設計・導線・数値管理まで設計。継続して売上が積み上がる状態を目指して、事業全体を整えます。</p>
+        </div>
+      </li>
+      <li class="value__item fade-in">
+        <span class="value__num" aria-hidden="true">03</span>
+        <div>
+          <h3 class="value__title">ジャンルに合わせて、最適な形で支援する</h3>
+          <p class="value__desc">コーチ・コンサル・スクール・サロンなど、扱うテーマや顧客層が違えば、必要な設計も変わります。あなたのジャンルや事業内容に合わせて、必要な導線と仕組みを整えます。</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== SERVICE ========== -->
+<section class="service" id="service">
+  <div class="container container--wide">
+    <span class="section__eyebrow fade-in">SERVICE</span>
+    <h2 class="section__heading fade-in">顧問サービスで<br>できること</h2>
+    <p class="section__lead fade-in">事業フェーズに合わせて、必要な支援を提供します。</p>
+
+    <div class="service__grid">
+      <div class="service__card fade-in">
+        <div class="service__num">01</div>
+        <h3 class="service__title">商品・サービス設計</h3>
+        <p class="service__desc">ペルソナの深層課題から逆算し、「売れる構造」を持った商品を一緒に設計。コンセプト・USP・価格帯・提供形式まで一気通貫で整理します。</p>
+        <div class="service__tags">
+          <span class="service__tag">商品設計</span>
+          <span class="service__tag">USP整理</span>
+          <span class="service__tag">価格設計</span>
+        </div>
+      </div>
+      <div class="service__card fade-in delay-1">
+        <div class="service__num">02</div>
+        <h3 class="service__title">ローンチ・販売戦略</h3>
+        <p class="service__desc">初回ローンチから複数回の再現まで設計。LP制作・SNS動線・メール設計・告知スケジュールを構造化し、「次も再現できる型」を作ります。</p>
+        <div class="service__tags">
+          <span class="service__tag">ローンチ設計</span>
+          <span class="service__tag">LP制作</span>
+          <span class="service__tag">SNS動線</span>
+        </div>
+      </div>
+      <div class="service__card fade-in delay-2">
+        <div class="service__num">03</div>
+        <h3 class="service__title">業務体制・外注構築</h3>
+        <p class="service__desc">自分がいなくても回る仕組みを設計。外注先の選定・指示書作成・KPI管理まで、「経営者の立場」から一緒に整えます。</p>
+        <div class="service__tags">
+          <span class="service__tag">外注管理</span>
+          <span class="service__tag">体制構築</span>
+          <span class="service__tag">KPI設計</span>
+        </div>
+      </div>
+      <div class="service__card fade-in">
+        <div class="service__num">04</div>
+        <h3 class="service__title">事業全体の構造整理</h3>
+        <p class="service__desc">今の事業の「ズレ・ムダ・欠落」を俯瞰して発見し、最適な構造に組み直します。「何が問題かわからない」状態から抜け出すための対話型支援。</p>
+        <div class="service__tags">
+          <span class="service__tag">課題抽出</span>
+          <span class="service__tag">構造整理</span>
+          <span class="service__tag">最適化</span>
+        </div>
+      </div>
+      <div class="service__card fade-in delay-1">
+        <div class="service__num">05</div>
+        <h3 class="service__title">思考OS・判断軸の整備</h3>
+        <p class="service__desc">なぜ同じ失敗を繰り返すのか。その根本にある「思考の前提（OS）」を整え、自分で考えて動ける状態を作ります。依存させない伴走が特徴です。</p>
+        <div class="service__tags">
+          <span class="service__tag">思考設計</span>
+          <span class="service__tag">判断軸整備</span>
+          <span class="service__tag">自立支援</span>
+        </div>
+      </div>
+      <div class="service__card fade-in delay-2">
+        <div class="service__num">06</div>
+        <h3 class="service__title">中長期の仕組み設計</h3>
+        <p class="service__desc">単発の成功で終わらせない。3〜12ヶ月のロードマップを引き、フェーズごとの目標・施策・体制を設計。「次の一手が見える」状態を作ります。</p>
+        <div class="service__tags">
+          <span class="service__tag">ロードマップ</span>
+          <span class="service__tag">仕組み化</span>
+          <span class="service__tag">PDCA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RESULTS ========== -->
+<section class="results" id="results">
+  <div class="container">
+    <span class="section__eyebrow fade-in">RESULTS</span>
+    <h2 class="section__heading fade-in">数字で見る、実績</h2>
+
+    <!-- 主要数字 -->
+    <div class="results__hero fade-in">
+      <div class="results__stat">
+        <div class="results__num">40<small>社以上</small></div>
+        <div class="results__label">CUMULATIVE CLIENTS</div>
+      </div>
+      <div class="results__divider" aria-hidden="true"></div>
+      <div class="results__stat">
+        <div class="results__num">3<small>億円超</small></div>
+        <div class="results__label">TOTAL PRODUCE VALUE</div>
+      </div>
+    </div>
+
+    <!-- 実績リスト -->
+    <ul class="results__list fade-in">
+      <li><strong>1ローンチで 250万円</strong>達成（コーチング事業）</li>
+      <li><strong>半年で 1,000万円</strong>達成（情報発信事業）</li>
+      <li><strong>年商 200万円 → 1,500万円</strong>（1年間の伴走支援）</li>
+      <li><strong>半年で売上 +300万円</strong>UP（キャリア支援事業）</li>
+    </ul>
+
+    <!-- クライアント事例グリッド -->
+    <p class="cases__heading">— CASE STUDIES —</p>
+    <div class="cases__grid">
+      <div class="case fade-in">
+        <span class="case__tag">アフィリエイトスクール</span>
+        <p class="case__num">2年で達成<br><strong>8,000万円</strong></p>
+      </div>
+      <div class="case fade-in delay-1">
+        <span class="case__tag">ヨガ・サブスクサービス</span>
+        <p class="case__num">入会者・年商<br><strong>800万円超</strong></p>
+      </div>
+      <div class="case fade-in delay-2">
+        <span class="case__tag">マネースクール</span>
+        <p class="case__num">1ローンチ<br><strong>2,000万円超</strong></p>
+      </div>
+      <div class="case fade-in delay-3">
+        <span class="case__tag">キャリアアップサポート</span>
+        <p class="case__num">売上UP<br><strong>+300万円</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== VOICES ========== -->
+<section class="voices" id="voices">
+  <div class="container">
+    <span class="section__eyebrow fade-in">VOICE</span>
+    <h2 class="section__heading fade-in">実際の声をご紹介</h2>
+
+    <div class="voices__grid">
+      <article class="voice fade-in">
+        <p class="voice__quote">
+          事業の全体像が見えていない状態から、毎月やることが明確になりました。商品設計と導線を一から組み直してもらい、2年で累計8,000万円のプロデュース実績を達成できました。
+        </p>
+        <footer class="voice__footer">
+          <p class="voice__attr">アフィリエイトスクール運営 / 30代</p>
+        </footer>
+      </article>
+      <article class="voice fade-in delay-1">
+        <p class="voice__quote">
+          入会者数が伸び悩んでいた原因が、価格設定と集客導線にあると気づかせてもらいました。整理してから半年で入会者が6倍になり、年商も800万円を超えました。
+        </p>
+        <footer class="voice__footer">
+          <p class="voice__attr">ヨガ・サブスクサービス運営 / 40代</p>
+        </footer>
+      </article>
+      <article class="voice fade-in delay-2">
+        <p class="voice__quote">
+          戦略は立てられても行動に移せない、という悩みがありました。KGIを設定して毎月確認する仕組みを作ってもらい、半年で売上が大幅に改善されました。
+        </p>
+        <footer class="voice__footer">
+          <p class="voice__attr">キャリアコーチング事業 / 30代</p>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROFILE ========== -->
+<section class="profile" id="profile">
+  <div class="container">
+    <span class="section__eyebrow fade-in">PROFILE</span>
+    <h2 class="section__heading fade-in">横山 尚武について</h2>
+
+    <div class="profile__inner fade-in">
+      <div class="profile__image">
+        <img src="images/profile.jpg"
+             alt="横山 尚武"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="profile__image-placeholder" style="display:none;">プロフィール写真</div>
+      </div>
+      <div class="profile__body">
+        <p class="profile__en">Naomu Yokoyama</p>
+        <h3 class="profile__name">横山 尚武</h3>
+        <p class="profile__title">合同会社akushu 代表 ／ 株式会社SOT 取締役</p>
+
+        <p class="profile__bio">
+          22歳で不動産営業会社へ、24歳でIT系ベンチャーに転職し、25歳で独立。マーケティング・事業構築・ローンチプロデュースなど幅広い領域で事業を展開し、累計40社以上の支援を通じてプロデュース総額3億円超を達成。
+        </p>
+        <p class="profile__bio">
+          「なぜ、いいものを持っているのに売れない人がいるのか。」事業が伸びない理由のほとんどは、才能でも努力でもなく、設計の問題です。この問題を解決するべく、事業設計から販売までをワンストップでサポートしています。
+        </p>
+        <p class="profile__bio">
+          あなたの可能性の架け橋になることが、私たちのミッションです。
+        </p>
+
+        <ul class="profile__career">
+          <li>
+            <span class="profile__age">22歳</span>
+            不動産営業会社 入社
+          </li>
+          <li>
+            <span class="profile__age">24歳</span>
+            ITベンチャー 転職
+          </li>
+          <li>
+            <span class="profile__age">25歳</span>
+            独立・合同会社akushu 設立
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="faq" id="faq">
+  <div class="container container--narrow">
+    <span class="section__eyebrow fade-in">FAQ</span>
+    <h2 class="section__heading fade-in">よくある質問</h2>
+
+    <div class="faq__list">
+      <div class="faq__item">
+        <div class="faq__q" role="button" tabindex="0">
+          <span aria-hidden="true">Q</span>
+          どんな方が対象ですか？
+        </div>
+        <div class="faq__a">
+          個人事業主・起業家の方を対象としています。コーチ・コンサル・スクール・サロン・士業など、無形サービスを提供されている方が中心です。SNSでの集客・ローンチ・仕組み化のいずれかでお悩みの方に特に向いています。
+        </div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q" role="button" tabindex="0">
+          <span aria-hidden="true">Q</span>
+          料金はいくらですか？
+        </div>
+        <div class="faq__a">
+          事業内容・支援内容に合わせて個別にご提案しています。まず無料の相談をお申し込みいただき、状況をお聞きした上でご案内いたします。
+        </div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q" role="button" tabindex="0">
+          <span aria-hidden="true">Q</span>
+          無料相談では何を話しますか？
+        </div>
+        <div class="faq__a">
+          現在の事業状況・課題・目標などをお聞きします（30〜45分程度）。売り込みはありません。壁打ち相手として気軽にご参加ください。その場でアドバイスをお伝えすることもあります。
+        </div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q" role="button" tabindex="0">
+          <span aria-hidden="true">Q</span>
+          業種や事業規模の制限はありますか？
+        </div>
+        <div class="faq__a">
+          無形ビジネス全般に対応しています。これから立ち上げる方から、既に事業が動いていてスケールさせたい方まで、幅広くご支援しています。まずはご相談ください。
+        </div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q" role="button" tabindex="0">
+          <span aria-hidden="true">Q</span>
+          顧問契約の期間はどのくらいですか？
+        </div>
+        <div class="faq__a">
+          最低3ヶ月からご契約いただいています。成果が出るまでの中長期伴走を前提としているため、継続していただけるクライアントを優先しています。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="contact" id="contact">
+  <div class="container container--narrow">
+    <span class="section__eyebrow fade-in">CONTACT</span>
+    <h2 class="contact__heading fade-in">まず、話してみませんか。</h2>
+    <p class="contact__sub fade-in">Zoom 30〜45分。売り込みなし。<br>事業の課題を整理する壁打ち相手として、お気軽にどうぞ。</p>
+
+    <div class="contact__cta-wrap fade-in">
+      <a class="btn btn--hero"
+         href="https://timerex.net/s/i.akushuofficial_b88a/fed5b8e7"
+         target="_blank" rel="noopener">無料相談はこちらから →</a>
+      <p class="contact__note">※ お申し込み後、2営業日以内にご連絡いたします</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <span class="footer__logo">akushu</span>
+      <p class="footer__tag">事業の課題を整理し、仕組みとして「回る」状態へ</p>
+    </div>
+    <nav class="footer__nav" aria-label="フッターナビ">
+      <ul>
+        <li><a href="#value">サービス</a></li>
+        <li><a href="#results">実績</a></li>
+        <li><a href="#profile">プロフィール</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="https://timerex.net/s/i.akushuofficial_b88a/fed5b8e7"
+               target="_blank" rel="noopener">無料相談</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer__bottom">
+    © 2025 合同会社akushu. All Rights Reserved.
+  </div>
+</footer>
+
+<!-- ========== Fixed Mobile CTA ========== -->
+<div class="fixed-cta" id="fixed-cta">
+  <a class="btn"
+     href="https://timerex.net/s/i.akushuofficial_b88a/fed5b8e7"
+     target="_blank" rel="noopener">無料相談はこちらから</a>
+</div>
+
+<script>
+// Header scroll
+const header = document.querySelector('.header');
+const fixedCta = document.getElementById('fixed-cta');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  header.classList.toggle('scrolled', y > 10);
+  fixedCta.classList.toggle('show', y > 400);
+}, { passive: true });
+
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+hamburger.addEventListener('click', () => {
+  const open = hamburger.classList.toggle('open');
+  mobileNav.classList.toggle('open', open);
+  hamburger.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+});
+mobileNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-label', 'メニューを開く');
+  });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq__q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.closest('.faq__item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq__item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+  q.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); }
+  });
+});
+
+// Scroll fade-in
+const observer = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: 0.12 }
+);
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
