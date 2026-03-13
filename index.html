@@ -178,7 +178,7 @@ section { padding: 80px 0; }
   max-width: 340px;
 }
 @media (min-width: 640px) {
-  .btn--hero { padding: 18px 52px; font-size: 1.0625rem; width: auto; max-width: none; }
+  .btn--hero { padding: 20px 64px; font-size: 1.125rem; width: auto; max-width: none; }
 }
 .btn--hero:hover {
   background: var(--blue-dark);
@@ -207,10 +207,18 @@ section { padding: 80px 0; }
   display: flex;
   align-items: center;
   height: 100%;
-  max-width: var(--w-wide);
-  margin: 0 auto;
   padding: 0 24px;
   gap: 0;
+}
+@media (min-width: 900px) {
+  .header__inner { padding: 0 48px 0 24px; }
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-right: auto;
 }
 
 .header__logo {
@@ -218,16 +226,26 @@ section { padding: 80px 0; }
   font-weight: 700;
   color: var(--navy);
   letter-spacing: .14em;
-  margin-right: auto;
+  white-space: nowrap;
+}
+
+.header__tagline {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--text-sub);
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+}
+@media (min-width: 900px) {
+  .header__tagline { font-size: 0.75rem; }
 }
 
 .header__nav { display: none; }
-.header__cta { display: none; }
 
 .header__nav-list {
   display: flex;
-  gap: 32px;
-  margin-right: 32px;
+  gap: 20px;
+  margin-right: 24px;
 }
 .header__nav-list a {
   font-size: .875rem;
@@ -262,7 +280,6 @@ section { padding: 80px 0; }
 
 @media (min-width: 900px) {
   .header__nav { display: flex; }
-  .header__cta { display: inline-flex; }
   .header__hamburger { display: none; }
 }
 
@@ -333,8 +350,8 @@ section { padding: 80px 0; }
 .hero__inner {
   position: relative;
   z-index: 1;
-  max-width: 900px;
-  padding: 40px 20px 64px;
+  max-width: 1100px;
+  padding: 40px 24px 64px;
   text-align: center;
   margin: 0 auto;
   display: flex;
@@ -343,13 +360,13 @@ section { padding: 80px 0; }
   gap: 32px;
 }
 @media (min-width: 768px) {
-  .hero__inner { padding: 64px 40px 80px; gap: 40px; }
+  .hero__inner { padding: 64px 52px 80px; gap: 44px; }
 }
 
 /* ヒーローバナー画像 */
 .hero__banner {
   width: 100%;
-  max-width: 760px;
+  max-width: 1000px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 24px 80px rgba(0,0,0,.55);
@@ -383,8 +400,8 @@ section { padding: 80px 0; }
   background: rgba(255,255,255,.07);
   border: 1px solid rgba(255,255,255,.16);
   border-radius: var(--r-pill);
-  padding: 14px 36px;
-  font-size: 1.125rem;
+  padding: 18px 48px;
+  font-size: 1.25rem;
   color: rgba(255,255,255,.72);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -394,18 +411,18 @@ section { padding: 80px 0; }
 .hero__badge strong {
   color: var(--accent);
   font-weight: 700;
-  margin: 0 4px;
+  margin: 0 5px;
 }
 .hero__badge-sep {
   display: none;
   width: 1px;
-  height: 14px;
+  height: 18px;
   background: rgba(255,255,255,.2);
   flex-shrink: 0;
 }
 @media (min-width: 600px) {
   .hero__badge { flex-wrap: nowrap; gap: 0; }
-  .hero__badge-sep { display: inline-block; margin: 0 14px; }
+  .hero__badge-sep { display: inline-block; margin: 0 20px; }
 }
 
 .hero__note {
@@ -791,14 +808,14 @@ section { padding: 80px 0; }
 }
 
 .genre {
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(37,99,235,.20);
+  border: 1px solid rgba(147,197,253,.35);
   border-radius: 6px;
   padding: 11px 8px;
   text-align: center;
   font-size: .9375rem;
   font-weight: 700;
-  color: rgba(255,255,255,.80);
+  color: rgba(255,255,255,.95);
   letter-spacing: .02em;
   transition: background var(--ease), color var(--ease);
 }
@@ -1206,33 +1223,7 @@ section { padding: 80px 0; }
 /* ========================================
    Fixed CTA（モバイルのみ）
 ======================================== */
-.fixed-cta {
-  position: fixed;
-  inset: auto 0 0;
-  z-index: 90;
-  padding: 12px 20px;
-  background: var(--navy-deep);
-  text-align: center;
-  transform: translateY(100%);
-  transition: transform .35s ease;
-  box-shadow: 0 -6px 24px rgba(0,0,0,.3);
-  border-top: 1px solid rgba(255,255,255,.08);
-}
-.fixed-cta.show { transform: translateY(0); }
-.fixed-cta .btn {
-  width: 100%;
-  max-width: 420px;
-  background: var(--blue);
-  border-color: var(--blue);
-  color: var(--white);
-  box-shadow: 0 4px 16px rgba(37,99,235,.4);
-}
-.fixed-cta .btn:hover {
-  background: var(--blue-dark);
-  border-color: var(--blue-dark);
-}
-
-@media (min-width: 900px) { .fixed-cta { display: none; } }
+.fixed-cta { display: none; }
 
 /* ========================================
    Scroll Fade-in
@@ -1258,18 +1249,21 @@ section { padding: 80px 0; }
 <!-- ========== HEADER ========== -->
 <header class="header">
   <div class="header__inner">
-    <a class="header__logo" href="#top">akushu</a>
+    <div class="header__brand">
+      <a class="header__logo" href="#top">akushu</a>
+      <span class="header__tagline">売上が継続的に生まれる<br>持続可能な事業へ</span>
+    </div>
     <nav class="header__nav" aria-label="グローバルナビ">
       <ul class="header__nav-list">
-        <li><a href="#value">サービス</a></li>
-        <li><a href="#results">実績</a></li>
+        <li><a href="#top">トップ</a></li>
+        <li><a href="#service">顧問の内容</a></li>
+        <li><a href="#results">支援実績</a></li>
+        <li><a href="#voices">お客様の声</a></li>
         <li><a href="#profile">プロフィール</a></li>
         <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#contact">問い合わせ</a></li>
       </ul>
     </nav>
-    <a class="btn btn--primary btn--sm header__cta"
-       href="https://timerex.net/s/i.akushuofficial_b88a/fed5b8e7"
-       target="_blank" rel="noopener">無料相談する</a>
     <button class="header__hamburger" id="hamburger" aria-label="メニューを開く">
       <span></span><span></span><span></span>
     </button>
@@ -1279,10 +1273,13 @@ section { padding: 80px 0; }
 <!-- Mobile Nav -->
 <nav class="mobile-nav" id="mobile-nav">
   <ul class="mobile-nav__list">
-    <li><a class="mobile-nav__link" href="#value">サービス</a></li>
-    <li><a class="mobile-nav__link" href="#results">実績</a></li>
+    <li><a class="mobile-nav__link" href="#top">トップ</a></li>
+    <li><a class="mobile-nav__link" href="#service">顧問の内容</a></li>
+    <li><a class="mobile-nav__link" href="#results">支援実績</a></li>
+    <li><a class="mobile-nav__link" href="#voices">お客様の声</a></li>
     <li><a class="mobile-nav__link" href="#profile">プロフィール</a></li>
     <li><a class="mobile-nav__link" href="#faq">よくある質問</a></li>
+    <li><a class="mobile-nav__link" href="#contact">問い合わせ</a></li>
   </ul>
   <div class="mobile-nav__cta">
     <a class="btn btn--hero"
@@ -1469,7 +1466,7 @@ section { padding: 80px 0; }
       <li>年商 <strong>200万円 → 1,500万円</strong> へ</li>
       <li>1ローンチで <strong>250万円</strong> を達成</li>
       <li>5ヶ月で売上 <strong>+300万円</strong> 増加</li>
-      <li>サブスク入会者 <strong>6倍</strong> ・売上 <strong>800万円超</strong></li>
+      <li>サブスク入会者数 <strong>6倍</strong>・売上 <strong>800万円超え</strong></li>
       <li><strong>2年</strong> でスクール事業 <strong>8,000万円超</strong></li>
     </ul>
 
@@ -1481,14 +1478,14 @@ section { padding: 80px 0; }
         <div class="genre">フィットネス</div>
         <div class="genre">マネースクール</div>
         <div class="genre">キャリアコーチング</div>
-        <div class="genre">デザイン</div>
+        <div class="genre">デザインスクール</div>
         <div class="genre">ビジネススクール</div>
         <div class="genre">英会話教室</div>
-        <div class="genre">アスリート育成</div>
+        <div class="genre">レシピ販売</div>
         <div class="genre">トレーナー育成</div>
         <div class="genre">地域メディア</div>
         <div class="genre">動画編集事業</div>
-        <div class="genre">住宅</div>
+        <div class="genre">外構エクステリア</div>
       </div>
     </div>
   </div>
@@ -1497,6 +1494,7 @@ section { padding: 80px 0; }
 <!-- ========== VOICES ========== -->
 <section class="voices" id="voices">
   <div class="container">
+    <span class="section__eyebrow fade-in">VOICE</span>
     <h2 class="section__heading fade-in">お客様の声</h2>
 
     <!-- メイン3件 -->
@@ -1505,7 +1503,7 @@ section { padding: 80px 0; }
         <p class="voice__heading">価格と導線を見直し、入会者6倍・年商8倍へ</p>
         <p class="voice__quote">入会者数が伸び悩んでいた原因が、価格設定と集客導線にあると分かりました。設計を整理してから半年で入会者が6倍になり、年商も8倍まで伸びました。売れない理由が感覚ではなく、構造として見えるようになったのが大きかったです。</p>
         <footer class="voice__footer">
-          <p class="voice__attr">ヨガ・サブスクサービス運営 / 40代</p>
+          <p class="voice__attr">ヨガサービス運営 / 50代</p>
         </footer>
       </article>
       <article class="voice fade-in delay-1">
@@ -1519,7 +1517,7 @@ section { padding: 80px 0; }
         <p class="voice__heading">事業全体の設計が整い、安心してローンチできた</p>
         <p class="voice__quote">商品設計だけでなく、契約書・決済手段・販売後の事務導線まで、事業として必要なものをまとめて整えてもらえました。「何が足りないか」が明確になったことで、一人では不安だったローンチ準備も迷わず進められるようになりました。売る前の不安が減り、土台のある状態でスタートできたのが大きかったです。</p>
         <footer class="voice__footer">
-          <p class="voice__attr">オンラインサービス事業 / 30代</p>
+          <p class="voice__attr">SNSビジネススクール運営 / 20代</p>
         </footer>
       </article>
     </div>
@@ -1545,7 +1543,7 @@ section { padding: 80px 0; }
     <!-- 展開ボタン -->
     <div class="voices__toggle">
       <button class="voices__toggle-btn" id="voices-toggle-btn" aria-expanded="false">
-        <span class="voices__toggle-text">他の声も見る</span>
+        <span class="voices__toggle-text">他のお客様の声も見る</span>
         <svg class="voices__toggle-icon" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M2 4.5L7 9.5L12 4.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -1570,7 +1568,7 @@ section { padding: 80px 0; }
       <div class="profile__body">
         <p class="profile__en">Naomu Yokoyama</p>
         <h3 class="profile__name">横山 尚武</h3>
-        <p class="profile__title">合同会社akushu 代表 ／ 株式会社SOT 取締役</p>
+        <p class="profile__title">合同会社akushu 代表</p>
 
         <p class="profile__bio">
           22歳で不動産営業会社へ、24歳でIT系ベンチャーに転職し、25歳で独立。マーケティング・事業構築・ローンチプロデュースなど幅広い領域で事業を展開し、累計40社以上の支援を通じてプロデュース総額3億円超を達成。
@@ -1582,20 +1580,6 @@ section { padding: 80px 0; }
           あなたの可能性の架け橋になることが、私たちのミッションです。
         </p>
 
-        <ul class="profile__career">
-          <li>
-            <span class="profile__age">22歳</span>
-            不動産営業会社 入社
-          </li>
-          <li>
-            <span class="profile__age">24歳</span>
-            ITベンチャー 転職
-          </li>
-          <li>
-            <span class="profile__age">25歳</span>
-            独立・合同会社akushu 設立
-          </li>
-        </ul>
 
       </div>
     </div>
@@ -1759,7 +1743,7 @@ if (voicesToggleBtn && voicesExtra) {
     voicesExtra.setAttribute('aria-hidden', String(!isOpen));
     voicesToggleBtn.classList.toggle('is-open', isOpen);
     voicesToggleBtn.setAttribute('aria-expanded', String(isOpen));
-    voicesToggleBtn.querySelector('.voices__toggle-text').textContent = isOpen ? '閉じる' : '他の声も見る';
+    voicesToggleBtn.querySelector('.voices__toggle-text').textContent = isOpen ? '閉じる' : '他のお客様の声も見る';
   });
 }
 </script>
