@@ -703,14 +703,18 @@ section { padding: 80px 0; }
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
-/* モバイル専用改行ユーティリティ */
-.sp-br { display: none; }
+/* 改行ユーティリティ */
+.sp-br { display: none; }   /* モバイルのみ表示 */
+.pc-br { display: inline; } /* デスクトップのみ表示 */
 
 @media (max-width: 639px) {
   .sp-br { display: inline; }
+  .pc-br { display: none; }
   .results__hero { flex-direction: column; }
   .concept__text { font-size: 1.5rem; }
   .concept__desc { font-size: 0.8rem; }
+  .empathy__conclusion__desc { font-size: 0.85rem; }
+  .empathy__conclusion__strong { font-size: 1.2rem; }
 }
 @media (min-width: 640px) {
   .results__hero { padding: 52px 40px; margin-bottom: 64px; }
@@ -1445,12 +1449,11 @@ section { padding: 80px 0; }
     </div>
 
     <div class="empathy__conclusion fade-in">
-      <p class="empathy__conclusion__desc">売上の悩みは、一つのやり方だけで解決するものではありません。</p>
-      <p class="empathy__conclusion__desc">商品・導線・体制が噛み合っていないと、成果は安定しないからです。</p>
+      <p class="empathy__conclusion__desc">売上の悩みは、一つのやり方だけで<br class="sp-br">解決するものではありません。</p>
+      <p class="empathy__conclusion__desc">商品・導線・体制が噛み合っていないと、<br class="sp-br">成果は安定しないからです。</p>
       <div class="empathy__conclusion__divider"></div>
       <strong class="empathy__conclusion__strong">
-        部分ではなく、事業全体を整える。<br>
-        それが、<em>売上を継続させる</em>近道です。
+        部分ではなく、事業全体を整える。<br class="pc-br">それが、<em>売上を継続させる</em>近道です。
       </strong>
     </div>
   </div>
