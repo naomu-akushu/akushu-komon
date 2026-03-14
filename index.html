@@ -703,8 +703,14 @@ section { padding: 80px 0; }
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
+/* モバイル専用改行ユーティリティ */
+.sp-br { display: none; }
+
 @media (max-width: 639px) {
+  .sp-br { display: inline; }
   .results__hero { flex-direction: column; }
+  .concept__text { font-size: 1.5rem; }
+  .concept__desc { font-size: 0.8rem; }
 }
 @media (min-width: 640px) {
   .results__hero { padding: 52px 40px; margin-bottom: 64px; }
@@ -1397,7 +1403,7 @@ section { padding: 80px 0; }
       売上が継続的に生まれる、<br>持続可能な事業へ
     </p>
     <p class="concept__desc fade-in">
-      自社商品の設計から動線作り、ローンチ、運用体制、KPI管理まで、<br>
+      自社商品の設計から動線作り、<br class="sp-br">ローンチ、運用体制、KPI管理まで、<br>
       売るだけで終わらない「事業として成り立つ形」へ、<br>
       伴走してサポートいたします。
     </p>
